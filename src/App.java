@@ -10,9 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.regex.PatternSyntaxException;
 
-//arquivo de saida
-//verificar a frase
-
 public class App {
 
     public static List<Transition> FuncReturnRead(String from, List<Transition> afdTransitions) {
@@ -26,9 +23,7 @@ public class App {
         return TransitionDoFrom;
     }
 
-    // 0->0,1
-    // 1->0,2
-    //
+    
 
     public static void main(String[] args) throws PatternSyntaxException {
 
@@ -222,7 +217,7 @@ public class App {
                         } /// FIMTEMPLIST Z
                     } /// FIM_SEPARA_J
 
-                    // listaAuxiliarCopList = ListaAuxiliar;
+                    
 
                     for (int wy = 0; wy < listaAuxiliarCopList.size(); wy++) {
                         char auxREAD = listaAuxiliarCopList.get(wy).charAt(0);// read
@@ -231,7 +226,7 @@ public class App {
                         TransitionAFD.add(new Transition(auxto, auxFrom, Character.toString(auxREAD)));// adiciona a
                                                                                                        // nova transição
 
-                        // char auxREAD ="";
+                    
                     }
 
                     for (int b = 0; b < ListaAuxiliar.size(); b++) {/// INICIO_LISTAAUX_B
@@ -254,7 +249,7 @@ public class App {
                             ListaDeIndiceMaquina.add(x);// se o estado não existir eu adiciono o indice nessa lista
                         }
                     } /// FIM_VERIFICA_SE_A_MAQUINA_EXISTE X
-                      // boolean flag3 = false;
+                      
                     List<String> ListaDeMaquinaRecebeFalse = new ArrayList();
                     boolean flag3 = false;
                     for (int s = 0; s < ListaDeIndiceMaquina.size(); s++) {
@@ -273,8 +268,7 @@ public class App {
                             ListaDeMaquinaRecebeFalse.add(Integer.toString(s) + "-false");
                         }
 
-                        // maquinaList.add(new State(ListaAuxiliar.get(ListaDeIndiceMaquina.get(s)), "",
-                        // ""));
+                     
 
                     } /// FIM_ADD_MAQUINA
                     for (int h = 0; h < ListaDeMaquinaRecebeFalse.size(); h++) {
@@ -292,14 +286,6 @@ public class App {
                             maquinaList.add(new State(ListaAuxiliar.get(ListaDeIndiceMaquina.get(aux5)), "", ""));
                             ListaEstadosAFD.add(new State(ListaAuxiliar.get(ListaDeIndiceMaquina.get(aux5)), "", ""));
 
-                            /*
-                             * for (int jj = 0; jj < ListaAuxiliar.size(); jj++) { if (ListaAuxiliar.get(jj)
-                             * == ListaAuxiliar.get(ListaDeIndiceMaquina.get(aux5))) { char auxREAD =
-                             * listaAuxiliarCopList.get(aux5).charAt(0);// read String auxFrom =
-                             * maquinaList.get(p).getID();// from String to =
-                             * ListaAuxiliar.get(ListaDeIndiceMaquina.get(jj));// TO TransitionAFD.add(new
-                             * Transition(to, auxFrom, Character.toString(auxREAD))); } }
-                             */
                         }
                     }
 
@@ -376,9 +362,7 @@ public class App {
                         for (int a = 0; a < maquinaList.size(); a++) {
                             if (maquinaList.get(a).getID().contains(ListaAuxiliar.get(x))) {
                                 flag2 = true;
-                            } // else{
-                              // flag2=false;
-                              // }
+                            } 
                         }
                         if (flag2 == false) {
 
@@ -453,16 +437,12 @@ public class App {
             List<String> x = new ArrayList();
             List<String> y = new ArrayList();
             String yago = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><!--Created with JFLAP 7.1.--><structure>&#13;\n\t<type>fa</type>&#13;\n\t<automaton>&#13;\n\t\t<!--The list of states.-->&#13;";
-           // System.out.println(yago);
-
-            //<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>&#13;
-	        //<type>fa</type>&#13;
-	        ///<automaton>&#13;
+           
 
             for (int ll = 0;ll<ListaEstadosAFD.size();ll++ ){
                x.add(ListaEstadosAFD.get(ll).pString(ll));
                yago= yago+x.get(ll);
-              // System.out.println(x.get(ll));
+             
             }
 
             
